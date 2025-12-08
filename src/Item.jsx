@@ -44,7 +44,7 @@ const products1 = [
   {
     id: 5,
     image: "https://rukminim2.flixcart.com/image/612/612/xif0q/watch/k/i/g/1-chrono-luxury-blue-rosegold-dualtone-ca-9839-cristiano-aillen-original-imahgg4gjhezh3de.jpeg?q=70",
-    title: " Luxury Sports Watch –h",
+    title: " Luxury Sports Watch ",
     per: "Soft, lightweight, and comfortable for all-day wear. Ideal for casual or daily use.",
     price: 2899,
   },
