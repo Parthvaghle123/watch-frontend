@@ -245,7 +245,7 @@ const Register = () => {
                         <div
                           className={`p-2 rounded text-center ${
                             form.gender === g
-                              ? "border border-success bg-light"
+                              ? "border border-dark bg-light"
                               : "border"
                           }`}
                         >
