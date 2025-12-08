@@ -84,7 +84,7 @@ const Navbar = ({ username, setUsername }) => {
                   `nav-link underline-animate ${isActive ? 'active' : ''}`
                 }
               >
-                About
+                About 
               </NavLink>
             </li>
             <li className="nav-item">
