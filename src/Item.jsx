@@ -23,7 +23,7 @@ const products1 = [
   {
     id: 2,
     image: "https://rukminim2.flixcart.com/image/612/612/k5cs87k0/watch/d/w/n/premium-luxury-chronograph-trendy-stylish-party-wear-benyar-original-imafnxvnghe3hzfu.jpeg?q=70",
-    title: "Analog Chronograph Trendy",
+    title: "Analog Watch Chronograph",
     per: "A premium silver chronograph watch featuring a striking blue dial with sporty detailing.",
     price: 2800,
   },
