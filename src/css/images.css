@@ -1,0 +1,186 @@
+/* Images box Design */
+#products {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  margin-top: 25px;
+  font-weight: bold;
+}
+
+.img-box1 {
+  width: 100%;
+  height: 105px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.images {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+}
+.h6 {
+  font-size: 15px;
+  color: black;
+  align-items: center;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.images:hover {
+  border: 2px solid black;
+}
+
+@media (min-width: 768px) {
+  #products {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (min-width: 2560px) {
+  #products {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  #products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .img-box1 {
+    width: 100%;
+    height: 90px;
+  }
+  h6 {
+    font-size: 15px;
+  }
+}
+@media (min-width: 1440px) {
+  #products {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .img-box1 {
+    width: 100%;
+    height: 120px;
+  }
+  h6 {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1300px) {
+  #products {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .img-box1 {
+    width: 100%;
+    height: 120px;
+  }
+  h6 {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  #products {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+@media screen and (max-width: 992px) {
+  .img-box1 {
+    width: 100%; /* makes the image container take full width */
+    max-height: 90px !important; /* restricts height */
+    object-fit: cover; /* ensures the image scales nicely */
+  }
+
+  h6 {
+    font-size: 14px; /* smaller heading size for narrow screens */
+    line-height: 1.4; /* optional for better readability */
+  }
+}
+.Herosection_2 {
+  height: auto;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%);
+  margin-bottom: 20px;
+  padding: 40px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.Herosection_2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(33, 37, 41, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(33, 37, 41, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.Herosection_2 .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Featured Collections Heading Styling */
+/* Note: Main heading styles are now in Home.css for consistency across all sections */
+
+/* Featured Collections Button Enhancement */
+.Herosection_2 .btn-outline-dark {
+  border-width: 2px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.Herosection_2 .btn-outline-dark:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(33, 37, 41, 0.2);
+}
+
+/* Responsive adjustments for Featured Collections */
+@media (max-width: 768px) {
+  .Herosection_2 {
+    padding: 30px 0;
+  }
+
+  .Herosection_2 .head {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .Herosection_2 {
+    padding: 25px 0;
+  }
+
+  .Herosection_2 .head {
+    font-size: 1.3rem;
+  }
+
+  .Herosection_2 .head::after {
+    width: 40px;
+  }
+}
+
+.Herosection_3 {
+  height: auto;
+  min-height: 500px;
+  background-color: rgba(220, 218, 218, 0.85);
+  padding-bottom: 40px;
+}
+
+.card-title {
+  margin-top: 150px;
+}
+
+
+.footer{
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%) !important; 
+  color: black !important;
+}
