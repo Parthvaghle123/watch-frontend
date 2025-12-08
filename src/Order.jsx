@@ -126,7 +126,7 @@ const Orders = () => {
     doc.setTextColor(...darkColor);
     doc.text("123 Watch Avenue, Time Square NY 10001", 20, y + 10);
     doc.text("Phone: 1-800-TIMEPIECE", 20, y + 18);
-    doc.text("https://watch-frontend-black.vercel.app/", 20, y + 26);
+    doc.text("https://watch-frontend-jade.vercel.app/", 20, y + 26);
 
     // Invoice banner - dark theme
     doc.setFillColor(...darkColor);
