@@ -23,7 +23,7 @@ const ChangePassword = () => {
     setAlertMessage(""); // Clear old alerts
 
     try {
-      const res = await axios.post("https://watch-backend-ijad.onrender.com/verify-email", {
+      const res = await axios.post("https://watch-backend-78qk.onrender.com/verify-email", {
         email: email.toLowerCase(),
       });
 
@@ -66,7 +66,7 @@ const ChangePassword = () => {
     }
 
     try {
-      const res = await axios.post("https://watch-backend-ijad.onrender.com/change-password", {
+      const res = await axios.post("https://watch-backend-78qk.onrender.com/change-password", {
         email: email.toLowerCase(),
         newPassword,
       });

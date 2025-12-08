@@ -21,7 +21,7 @@ const Navbar = ({ username, setUsername }) => {
     try {
       const token = localStorage.getItem('token');
       if (token) {
-        await fetch('https://watch-backend-ijad.onrender.com/logout', {
+        await fetch('https://watch-backend-78qk.onrender.com/logout', {
           method: 'POST',
           headers: { Authorization: `Bearer ${token}` },
         });

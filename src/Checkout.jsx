@@ -26,7 +26,7 @@ const Check = () => {
       if (!token) return;
 
       try {
-        const res = await axios.get("https://watch-backend-ijad.onrender.com/user/profile", {
+        const res = await axios.get("https://watch-backend-78qk.onrender.com/user/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setFormData((prev) => ({
@@ -133,7 +133,7 @@ const placeOrder = async (e) => {
       cardNumber: rawCardNumber,
     };
 
-    await axios.post("https://watch-backend-ijad.onrender.com/order", payload, {
+    await axios.post("https://watch-backend-78qk.onrender.com/order", payload, {
       headers: { Authorization: `Bearer ${token}` },
     });
 

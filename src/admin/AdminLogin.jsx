@@ -23,7 +23,7 @@ const AdminLogin = () => {
     setLoading(true);
     setError("");
     try {
-      const res = await axios.post("https://watch-backend-ijad.onrender.com/admin/login", {
+      const res = await axios.post("https://watch-backend-78qk.onrender.com/admin/login", {
         username,
         password,
       });

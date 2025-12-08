@@ -29,7 +29,7 @@ const Orders = () => {
   useEffect(() => {
     const token = localStorage.getItem("adminToken");
     axios
-      .get("https://watch-backend-ijad.onrender.com/admin/orders", {
+      .get("https://watch-backend-78qk.onrender.com/admin/orders", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -75,7 +75,7 @@ const Orders = () => {
       const token = localStorage.getItem("adminToken");
 
       await axios.put(
-        `https://watch-backend-ijad.onrender.com/admin/orders/${orderId}/status`,
+        `https://watch-backend-78qk.onrender.com/admin/orders/${orderId}/status`,
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );

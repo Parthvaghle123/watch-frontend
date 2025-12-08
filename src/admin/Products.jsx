@@ -88,7 +88,7 @@ const Products = () => {
   const fetchProducts = async () => {
     try {
       const token = localStorage.getItem("adminToken");
-      const response = await axios.get("https://watch-backend-ijad.onrender.com/admin/products", {
+      const response = await axios.get("https://watch-backend-78qk.onrender.com/admin/products", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProducts(response.data);
@@ -125,7 +125,7 @@ const Products = () => {
     try {
       const token = localStorage.getItem("adminToken");
       const response = await axios.post(
-        "https://watch-backend-ijad.onrender.com/admin/products",
+        "https://watch-backend-78qk.onrender.com/admin/products",
         formData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -147,7 +147,7 @@ const Products = () => {
     try {
       const token = localStorage.getItem("adminToken");
       const response = await axios.put(
-        `https://watch-backend-ijad.onrender.com/admin/products/${selectedProduct._id}`,
+        `https://watch-backend-78qk.onrender.com/admin/products/${selectedProduct._id}`,
         formData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -180,7 +180,7 @@ const Products = () => {
     try {
       const token = localStorage.getItem("adminToken");
       const response = await axios.delete(
-        `https://watch-backend-ijad.onrender.com/admin/products/${productId}`,
+        `https://watch-backend-78qk.onrender.com/admin/products/${productId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
@@ -200,7 +200,7 @@ const Products = () => {
     try {
       const token = localStorage.getItem("adminToken");
       const response = await axios.patch(
-        `https://watch-backend-ijad.onrender.com/admin/products/${productId}/toggle-availability`,
+        `https://watch-backend-78qk.onrender.com/admin/products/${productId}/toggle-availability`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -222,7 +222,7 @@ const Products = () => {
     try {
       const token = localStorage.getItem("adminToken");
       const response = await axios.patch(
-        `https://watch-backend-ijad.onrender.com/admin/products/${productId}/toggle-display`,
+        `https://watch-backend-78qk.onrender.com/admin/products/${productId}/toggle-display`,
         { displayType: "menu" },
         { headers: { Authorization: `Bearer ${token}` } }
       );

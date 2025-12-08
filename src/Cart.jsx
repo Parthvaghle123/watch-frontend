@@ -23,7 +23,7 @@ const Cart = () => {
         return;
       }
 
-      const res = await axios.get("https://watch-backend-ijad.onrender.com/cart", {
+      const res = await axios.get("https://watch-backend-78qk.onrender.com/cart", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const cart = res.data.cart || [];
@@ -50,7 +50,7 @@ const Cart = () => {
         return;
       }
       await axios.put(
-        `https://watch-backend-ijad.onrender.com/update-quantity/${productId}`,
+        `https://watch-backend-78qk.onrender.com/update-quantity/${productId}`,
         { action },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -75,7 +75,7 @@ const Cart = () => {
         return;
       }
       await axios.delete(
-        `https://watch-backend-ijad.onrender.com/remove-from-cart/${productId}`,
+        `https://watch-backend-78qk.onrender.com/remove-from-cart/${productId}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }

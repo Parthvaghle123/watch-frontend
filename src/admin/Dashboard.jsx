@@ -21,7 +21,7 @@ const Dashboard = () => {
           return;
         }
 
-        const response = await axios.get('https://watch-backend-ijad.onrender.com/api/admin/stats', {
+        const response = await axios.get('https://watch-backend-78qk.onrender.com/api/admin/stats', {
           headers: { Authorization: `Bearer ${token}` },
         });
 

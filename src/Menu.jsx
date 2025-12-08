@@ -26,7 +26,7 @@ const Item = () => {
         setLoading(true);
 
         const response = await axios.get(
-          "https://watch-backend-ijad.onrender.com/api/products"
+          "https://watch-backend-78qk.onrender.com/api/products"
         );
 
         // Set products immediately
@@ -95,7 +95,7 @@ const Item = () => {
     }
     try {
       await axios.post(
-        "https://watch-backend-ijad.onrender.com/add-to-cart",
+        "https://watch-backend-78qk.onrender.com/add-to-cart",
         {
           productId: product._id,
           image: product.image,

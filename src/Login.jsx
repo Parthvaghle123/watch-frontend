@@ -31,7 +31,7 @@ const Login = ({ setUsername }) => {
     setLoading(true);
 
     axios
-      .post("https://watch-backend-ijad.onrender.com/login", {
+      .post("https://watch-backend-78qk.onrender.com/login", {
         email: emailInput.toLowerCase(),
         password,
       })

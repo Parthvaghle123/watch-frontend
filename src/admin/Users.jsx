@@ -55,7 +55,7 @@ const Users = () => {
           return;
         }
 
-        const response = await axios.get("https://watch-backend-ijad.onrender.com/admin/users", {
+        const response = await axios.get("https://watch-backend-78qk.onrender.com/admin/users", {
           headers: { Authorization: `Bearer ${token}` },
         });
 

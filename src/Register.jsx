@@ -127,7 +127,7 @@ const Register = () => {
     if (!validateForm()) return; // ❌ stop if validation fails
 
     axios
-      .post("https://watch-backend-ijad.onrender.com/register", {
+      .post("https://watch-backend-78qk.onrender.com/register", {
         ...form,
         password: password,
       })

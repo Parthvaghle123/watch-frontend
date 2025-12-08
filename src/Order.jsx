@@ -25,7 +25,7 @@ const Orders = () => {
     }
 
     axios
-      .get("https://watch-backend-ijad.onrender.com/orders", {
+      .get("https://watch-backend-78qk.onrender.com/orders", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setOrders(res.data.orders || res.data))
@@ -65,7 +65,7 @@ const Orders = () => {
 
     try {
       await axios.put(
-        `https://watch-backend-ijad.onrender.com/api/cancel-order/${cancelOrderId}`,
+        `https://watch-backend-78qk.onrender.com/api/cancel-order/${cancelOrderId}`,
         { reason: reasonToSend },
         { headers: { Authorization: `Bearer ${token}` } }
       );
