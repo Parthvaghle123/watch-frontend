@@ -42,7 +42,7 @@ const Navbar = ({ username, setUsername }) => {
     <nav className="navbar navbar-expand-lg navbar-light bg-whitesmoke ">
       <div className="container">
         <Link className="navbar-brand d-flex" to="/">
-          <h3 className="fs-4 ms-1 text-white">Watch Store</h3>
+          <h3 className="fs-4 ms-1 text-dark">Watch Store</h3>
         </Link>
 
         <button
