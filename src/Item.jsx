@@ -153,7 +153,7 @@ const Item = () => {
 
     try {
       await axios.post(
-        "https://watch-backend-78qk.onrender.com/add-to-cart",
+        "http://localhost:3001/add-to-cart",
         {
           productId: product.id.toString(),
           image: product.image,

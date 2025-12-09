@@ -24,6 +24,7 @@ const Products = () => {
     description: "",
     price: "",
     image: "",
+    images: ["", "", ""],
     category: "Drinks",
     stock: "",
     featured: false,
@@ -113,6 +114,7 @@ const Products = () => {
       description: "",
       price: "",
       image: "",
+      images: ["", "", ""],
       category: "Drinks",
       stock: "",
       featured: false,
@@ -124,9 +126,10 @@ const Products = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem("adminToken");
+      const payload = { ...formData, images: formData.images.filter(Boolean) };
       const response = await axios.post(
         "https://watch-backend-78qk.onrender.com/admin/products",
-        formData,
+        payload,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
@@ -146,9 +149,10 @@ const Products = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem("adminToken");
+      const payload = { ...formData, images: formData.images.filter(Boolean) };
       const response = await axios.put(
         `https://watch-backend-78qk.onrender.com/admin/products/${selectedProduct._id}`,
-        formData,
+        payload,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
@@ -264,6 +268,9 @@ const Products = () => {
       description: product.description || "",
       price: product.price ? product.price.toString() : "0",
       image: product.image || "",
+      images: Array.isArray(product.images) && product.images.length
+        ? [...product.images.slice(0, 3), ...Array(Math.max(0, 3 - product.images.length)).fill("")]
+        : ["", "", ""],
       category: product.category || "Other",
       stock: product.stock ? product.stock.toString() : "0",
       featured: !!product.featured,
@@ -271,6 +278,14 @@ const Products = () => {
     });
 
     setShowEditModal(true);
+  };
+
+  const handleImageArrayChange = (index, value) => {
+    setFormData((prev) => {
+      const next = [...prev.images];
+      next[index] = value;
+      return { ...prev, images: next };
+    });
   };
 
   if (loading) {
@@ -580,6 +595,28 @@ const Products = () => {
                         />
                       </div>
                     </div>
+                    
+                    <div className="mb-3">
+                      <label className="form-label">Additional Images (up to 3)</label>
+                      <div className="images-grid">
+                        {formData.images.map((url, idx) => (
+                          <div className="image-box" key={idx}>
+                            <input
+                              type="url"
+                              className="form-control image-input"
+                              placeholder={`https://example.com/image-${idx+1}.jpg`}
+                              value={url}
+                              onChange={(e) => handleImageArrayChange(idx, e.target.value)}
+                            />
+                            {url ? (
+                              <img src={url} alt={`img-${idx}`} className="image-thumb" onError={(e)=>{e.target.style.display='none';}} />
+                            ) : (
+                              <div className="image-thumb placeholder">No image</div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                     {/* Image Preview Section */}
                     {formData.image && (
                       <div className="mb-3">
@@ -750,6 +787,27 @@ const Products = () => {
                           spellCheck={false}
                           required
                         />
+                      </div>
+                    </div>
+                    <div className="mb-3">
+                      <label className="form-label">Additional Images (up to 3)</label>
+                      <div className="images-grid">
+                        {formData.images.map((url, idx) => (
+                          <div className="image-box" key={idx}>
+                            <input
+                              type="url"
+                              className="form-control image-input"
+                              placeholder={`https://example.com/image-${idx+1}.jpg`}
+                              value={url}
+                              onChange={(e) => handleImageArrayChange(idx, e.target.value)}
+                            />
+                            {url ? (
+                              <img src={url} alt={`img-${idx}`} className="image-thumb" onError={(e)=>{e.target.style.display='none';}} />
+                            ) : (
+                              <div className="image-thumb placeholder">No image</div>
+                            )}
+                          </div>
+                        ))}
                       </div>
                     </div>
                     <label className="form-label">Image Preview</label>

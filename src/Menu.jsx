@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/Menu.css";
 import axios from "axios";
 
+
 const Item = () => {
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
@@ -17,6 +18,7 @@ const Item = () => {
   const [toastMessage, setToastMessage] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   // 🔹 Fetch products with proper loading state management
   useEffect(() => {
@@ -79,6 +81,7 @@ const Item = () => {
 
   const openProductModal = (product) => {
     setSelectedProduct(product);
+    setActiveImageIndex(0);
     setShowModal(true);
   };
 
@@ -86,6 +89,19 @@ const Item = () => {
     setShowModal(false);
     setSelectedProduct(null);
   };
+
+  const productImages = selectedProduct
+    ? (() => {
+        const base = [selectedProduct.image];
+        if (Array.isArray(selectedProduct.images) && selectedProduct.images.length) {
+          for (const url of selectedProduct.images) {
+            if (!base.includes(url)) base.push(url);
+          }
+        }
+        while (base.length < 4) base.push(selectedProduct.image);
+        return base.slice(0, 4);
+      })()
+    : [];
 
   const addToCart = async (product) => {
     if (!token) {
@@ -158,12 +174,26 @@ const Item = () => {
               ×
             </button>
             <div className="product-modal-body">
-              <div className="product-modal-image-container">
-                <img 
-                  src={selectedProduct.image} 
-                  alt={selectedProduct.name}
-                  className="product-modal-image"
-                />
+              <div className="product-modal-left">
+                <div className="product-modal-image-container">
+                  <img 
+                    src={productImages[activeImageIndex]} 
+                    alt={selectedProduct.name}
+                    className="product-modal-image"
+                  />
+                </div>
+                <div className="product-modal-thumbs">
+                  {productImages.map((img, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      className={`product-modal-thumb ${idx === activeImageIndex ? 'active' : ''}`}
+                      onClick={() => setActiveImageIndex(idx)}
+                    >
+                      <img src={img} alt={`thumb-${idx}`} />
+                    </button>
+                  ))}
+                </div>
               </div>
               <div className="product-modal-info">
                 <h2 className="product-modal-title">{selectedProduct.name}</h2>
